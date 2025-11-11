@@ -1,0 +1,19 @@
+<button type="button" (click)="logIn()">
+    Klikni me
+</button>
+
+<div *ngIf="loggedIn == true">Dobrodosao {{Ime}} {{Prezime}}</div>
+<div *ngIf="loggedIn == false">Niste logovani</div>
+
+<button (click)="AddProducts()">DodajProdukte</button>
+
+<div *ngFor="let product of Products">
+    <p>{{product.code}}</p>
+    <p>{{product.name}}</p>
+    <p>{{product.price}}</p>
+    <div *ngIf="product.informacija" class="druga-boja">{{product.informacija}}</div>    
+</div>  
+
+<div *ngIf="dugme<10" (click)="klikniDugme()">
+    <button>Brojac</button>
+</div>
