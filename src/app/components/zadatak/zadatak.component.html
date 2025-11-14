@@ -1,3 +1,5 @@
+<!-- Prvi susret -->
+<!-- 
 <button type="button" (click)="logIn()">
     Klikni me
 </button>
@@ -17,3 +19,36 @@
 <div *ngIf="dugme<10" (click)="klikniDugme()">
     <button>Brojac</button>
 </div>
+ -->
+
+<!-- drugi susret -->
+
+<img [src]="imagePath" style="width: 100px; height: 100px; display: block; margin-top: 20px; margin-bottom: 20px;" alt="">
+
+<button type="button" [disabled]="isDisabled">Dugme</button>
+
+<table>
+    <thead>
+        <th>Slika:</th>
+        <th>Kod:</th>
+        <th>Naziv:</th>
+        <th>Cijena:</th>
+        <th>Kolicina:</th>
+        <th>Popust:</th>
+        <th>Deskripcija:</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of products">
+            <td><img [src]="i.image" alt="" style="width: 80px; height: 80px;"></td>
+            <td [style.width.px]="descriptionWidth">{{i.code}}</td>
+            <td [style.color]="nameColor" >{{i.name}}</td>
+            <td [ngClass]="i.discount ? 'discount-color' : 'druga-boja'">{{i.price}}</td>
+            <td [ngClass]="{'quantity-color': i.quantity>=10}" style="text-align: center;">{{i.quantity}}</td>
+            <!-- <td *ngIf="i.discount">Da</td>
+            <td *ngIf="!i.discount">Ne</td> -->
+            <td><button type="button" [disabled]="!i.discount" (click)="promijeniDiscount(i)">{{i.discount ? 'Da' : 'Ne'}}</button></td>
+            <!-- <td [ngStyle]="{'font-size' : i.discount ? '12px' : '20px'}">{{i.description}}</td> -->
+            <td [ngStyle]="{'font-size' : i.description.length >= 10 ? '12px' : '20px'}">{{i.description}}</td>
+        </tr>
+    </tbody>
+</table>

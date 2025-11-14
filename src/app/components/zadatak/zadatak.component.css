@@ -1,3 +1,10 @@
 .druga-boja{
     color: red;
 }
+
+.discount-color{
+    color: lightgreen;
+}
+.quantity-color{
+    background-color: lightblue;
+}
