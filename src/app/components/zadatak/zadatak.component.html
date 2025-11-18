@@ -1,4 +1,5 @@
-<!-- Prvi susret -->
+<!-- PRVI SUSRET -->
+ 
 <!-- 
 <button type="button" (click)="logIn()">
     Klikni me
@@ -21,9 +22,11 @@
 </div>
  -->
 
-<!-- drugi susret -->
 
-<img [src]="imagePath" style="width: 100px; height: 100px; display: block; margin-top: 20px; margin-bottom: 20px;" alt="">
+
+<!-- DRUGI SUSRET -->
+
+<!-- <img [src]="imagePath" style="width: 100px; height: 100px; display: block; margin-top: 20px; margin-bottom: 20px;" alt="">
 
 <button type="button" [disabled]="isDisabled">Dugme</button>
 
@@ -44,11 +47,110 @@
             <td [style.color]="nameColor" >{{i.name}}</td>
             <td [ngClass]="i.discount ? 'discount-color' : 'druga-boja'">{{i.price}}</td>
             <td [ngClass]="{'quantity-color': i.quantity>=10}" style="text-align: center;">{{i.quantity}}</td>
-            <!-- <td *ngIf="i.discount">Da</td>
-            <td *ngIf="!i.discount">Ne</td> -->
+            <td *ngIf="i.discount">Da</td>
+            <td *ngIf="!i.discount">Ne</td>
             <td><button type="button" [disabled]="!i.discount" (click)="promijeniDiscount(i)">{{i.discount ? 'Da' : 'Ne'}}</button></td>
-            <!-- <td [ngStyle]="{'font-size' : i.discount ? '12px' : '20px'}">{{i.description}}</td> -->
+            <td [ngStyle]="{'font-size' : i.discount ? '12px' : '20px'}">{{i.description}}</td>
             <td [ngStyle]="{'font-size' : i.description.length >= 10 ? '12px' : '20px'}">{{i.description}}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
+
+
+
+
+<!-- TRECI SUSRET -->
+
+
+<!-- <h1>Datum: {{today | date:"dd.MM.yyyy"}}</h1>
+<input type="text" #searchvalue (input)="onInput(searchvalue.value)">
+<h1>{{productName | uppercase}}</h1>
+
+<input type="text" (keyup.enter)="onKeyUp()">
+<div></div>
+<input type="text" (mouseenter)="onMouseEnter($event)">
+<div></div>
+<button type="button" (dblclick)="onDoubleClick($event)">Dupli klik</button>
+<button type="button" (contextmenu)="onRightClick($event)">Desni klik</button>
+
+<table>
+    <thead>
+        <th>Slika:</th>
+        <th>Kod:</th>
+        <th>Naziv:</th>
+        <th>Cijena:</th>
+        <th>Kolicina:</th>
+        <th>Popust:</th>
+        <th>Deskripcija:</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of products">
+            <td><img [src]="i.image" alt="" style="width: 80px; height: 80px;"></td>
+            <td [style.width.px]="descriptionWidth">{{i.code}}</td>
+            <td [style.color]="nameColor" >{{i.name | uppercase}}</td>
+            <td [ngClass]="i.discount ? 'discount-color' : 'druga-boja'">{{i.price | currency: 'EUR'}}</td>
+            <td [ngClass]="{'quantity-color': i.quantity>=10}" style="text-align: center;">{{i.quantity}}</td>
+            <td *ngIf="i.discount">Da</td>
+            <td *ngIf="!i.discount">Ne</td>
+            <td><button type="button" [disabled]="!i.discount" (click)="promijeniDiscount(i)">{{i.discount ? 'Da' : 'Ne'}}</button></td>
+            <td [ngStyle]="{'font-size' : i.discount ? '12px' : '20px'}">{{i.description}}</td>
+            <td [ngStyle]="{'font-size' : i.description.length >= 10 ? '12px' : '20px'}">{{i.description | slice: 0:5}}</td>
+            <td><button type="button">Uredi</button></td>
+        </tr>
+    </tbody>
+</table> -->
+
+<!-- 
+Vježba
+
+Zadatak 1: Live prikaz unosa.  Napraviti input polje. Korisnik dok kuca tekst prikazuje se njegova vrijednost ispod u paragrafu, ispod prikazati i broj karaktera koji je unio.
+
+<input type="text" #searchvalue (input)="onInput(searchvalue.value)"><br>
+<span>{{productName}}</span><br>
+<span>{{productName.length}}</span><br>
+
+Zadatak 2: Mijenjanje boje preko miša (mouseover / mouseleave). Napraviti div koji: mijenja boju u plavu kada korisnik pređe mišem (mouseenter), vraća boju na sivu kada izađe (mouseleave).
+
+<input type="text" (mouseenter)="MjenjajBoju($event)" (mouseleave)="MjenjajBoju($event)" [ngStyle]="{'backgroundColor' : someColor ? 'blue' : 'grey'}">
+
+Zadatak 3: Lista proizvoda (ngFor + currency pipe)
+Napraviti listu proizvoda. U HTML-u prikazati tabelu proizvoda: ime proizvoda, cijenu formatiranu currency:'EUR', red koji je skuplji od 1000 EUR treba biti crvene boje. 
+ -->
+<!-- <table>
+    <thead>
+        <th>Slika:</th>
+        <th>Kod:</th>
+        <th>Naziv:</th>
+        <th>Cijena:</th>
+        <th>Kolicina:</th>
+        <th>Popust:</th>
+        <th>Deskripcija:</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of products">
+            <td><img [src]="i.image" alt="" style="width: 80px; height: 80px;"></td>
+            <td [style.width.px]="descriptionWidth">{{i.code}}</td>
+            <td [style.color]="nameColor" >{{i.name | uppercase}}</td>
+            <td [ngClass]="i.price >= 1000 ? 'discount-color' : 'druga-boja'">{{i.price | currency: 'EUR'}}</td>
+            <td [ngClass]="{'quantity-color': i.quantity>=10}" style="text-align: center;">{{i.quantity}}</td>
+            <td *ngIf="i.discount">Da</td>
+            <td *ngIf="!i.discount">Ne</td>
+            <td><button type="button" [disabled]="!i.discount" (click)="promijeniDiscount(i)">{{i.discount ? 'Da' : 'Ne'}}</button></td>
+            <td [ngStyle]="{'font-size' : i.discount ? '12px' : '20px'}">{{i.description}}</td>
+            <td><button type="button">Uredi</button></td>
+        </tr>
+    </tbody>
+</table> -->
+
+<!-- 
+Zadatak 4: Računanje u realnom vremenu. Napraviti dva input polja tipa number. Svaki put kada korisnik unese broj, sabrati vrijednosti, ispod prikazati rezultat formatiran sa 2 decimale. 
+-->
+
+<input type="number" #n (change)="saberi(n.value, 0)">
+<input type="number" #m (change)="saberi(0, m.value)">
+<span>{{vrijednost}}</span>
+
+<!--
+Zadatak 5: Lista korisnika s filtriranjem. Napraviti listu korisnika (10 imena). Dodati input za filtriranje: na svaki keyup filtrirati listu korisnika koji sadrže uneseni tekst, prikazivati prva 3 rezultata pomoću slice:0:3.  -->
+
+
