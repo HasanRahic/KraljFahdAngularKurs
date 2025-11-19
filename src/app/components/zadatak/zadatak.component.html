@@ -146,11 +146,18 @@ Napraviti listu proizvoda. U HTML-u prikazati tabelu proizvoda: ime proizvoda, c
 Zadatak 4: Računanje u realnom vremenu. Napraviti dva input polja tipa number. Svaki put kada korisnik unese broj, sabrati vrijednosti, ispod prikazati rezultat formatiran sa 2 decimale. 
 -->
 
-<input type="number" #n (change)="saberi(n.value, 0)">
-<input type="number" #m (change)="saberi(0, m.value)">
-<span>{{vrijednost}}</span>
+<input type="number" (change)="Input1($event)">
+<input type="number" (change)="Input2($event)">
+<span>{{suma}}</span>
 
 <!--
 Zadatak 5: Lista korisnika s filtriranjem. Napraviti listu korisnika (10 imena). Dodati input za filtriranje: na svaki keyup filtrirati listu korisnika koji sadrže uneseni tekst, prikazivati prva 3 rezultata pomoću slice:0:3.  -->
+
+<input type="text" (keyup)="filtriranje($event)">
+<ul>
+    <li *ngFor="let korisnik of filtriraniKorisnici.slice(0,3)">
+        <span>{{korisnik.name}}</span>
+    </li>
+</ul>
 
 
