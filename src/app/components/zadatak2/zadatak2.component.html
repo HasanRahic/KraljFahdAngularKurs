@@ -1,0 +1,11 @@
+<div style="padding: 10px; border: 1px solid red; display: flex; justify-content: center; align-items: center;">
+    <label>Naziv proizvoda</label>
+    <input type="text" [(ngModel)]="productName" (input)="changeProductName()" class="form-control" />
+    <div>
+        <select [(ngModel)]="selectedType" (change)="promijenitProductType()">
+            <option *ngFor="let i of productTypeList" [value]="i.id" class="form-control">{{i.name}}</option>
+        </select>
+    </div>
+
+</div>
+<h1>Trenutno odabrani tip proizovda je: {{selectedTypeName}}</h1>

@@ -1,5 +1,5 @@
 <!-- PRVI SUSRET -->
- 
+
 <!-- 
 <button type="button" (click)="logIn()">
     Klikni me
@@ -62,7 +62,7 @@
 <!-- TRECI SUSRET -->
 
 
-<!-- <h1>Datum: {{today | date:"dd.MM.yyyy"}}</h1>
+<h1>Datum: {{today | date:"dd.MM.yyyy"}}</h1>
 <input type="text" #searchvalue (input)="onInput(searchvalue.value)">
 <h1>{{productName | uppercase}}</h1>
 
@@ -70,10 +70,10 @@
 <div></div>
 <input type="text" (mouseenter)="onMouseEnter($event)">
 <div></div>
-<button type="button" (dblclick)="onDoubleClick($event)">Dupli klik</button>
-<button type="button" (contextmenu)="onRightClick($event)">Desni klik</button>
+<button type="button" (dblclick)="onDoubleClick($event)" class="btn btn-success">Dupli klik</button>
+<button type="button" (contextmenu)="onRightClick($event)" class="btn btn-success">Desni klik</button>
 
-<table>
+<table class="table">
     <thead>
         <th>Slika:</th>
         <th>Kod:</th>
@@ -90,15 +90,15 @@
             <td [style.color]="nameColor" >{{i.name | uppercase}}</td>
             <td [ngClass]="i.discount ? 'discount-color' : 'druga-boja'">{{i.price | currency: 'EUR'}}</td>
             <td [ngClass]="{'quantity-color': i.quantity>=10}" style="text-align: center;">{{i.quantity}}</td>
-            <td *ngIf="i.discount">Da</td>
-            <td *ngIf="!i.discount">Ne</td>
-            <td><button type="button" [disabled]="!i.discount" (click)="promijeniDiscount(i)">{{i.discount ? 'Da' : 'Ne'}}</button></td>
+            <td *ngIf="i.discount" class="btn btn-primary">Da</td>
+            <td *ngIf="!i.discount" class="btn btn-primary">Ne</td>
+            <td><button type="button" [disabled]="!i.discount" (click)="promijeniDiscount(i)" class="btn btn-primary">{{i.discount ? 'Da' : 'Ne'}}</button></td>
             <td [ngStyle]="{'font-size' : i.discount ? '12px' : '20px'}">{{i.description}}</td>
             <td [ngStyle]="{'font-size' : i.description.length >= 10 ? '12px' : '20px'}">{{i.description | slice: 0:5}}</td>
-            <td><button type="button">Uredi</button></td>
+            <td><button type="button" class="btn btn-warning">Uredi</button></td>
         </tr>
     </tbody>
-</table> -->
+</table>
 
 <!-- 
 Vježba
@@ -145,19 +145,20 @@ Napraviti listu proizvoda. U HTML-u prikazati tabelu proizvoda: ime proizvoda, c
 <!-- 
 Zadatak 4: Računanje u realnom vremenu. Napraviti dva input polja tipa number. Svaki put kada korisnik unese broj, sabrati vrijednosti, ispod prikazati rezultat formatiran sa 2 decimale. 
 -->
-
-<input type="number" (change)="Input1($event)">
-<input type="number" (change)="Input2($event)">
-<span>{{suma}}</span>
+<div>
+    <input type="number" (change)="Input1($event)" class="form-control">
+    <input type="number" (change)="Input2($event)" class="form-control">
+    <span>{{suma}}</span>
+</div>
 
 <!--
 Zadatak 5: Lista korisnika s filtriranjem. Napraviti listu korisnika (10 imena). Dodati input za filtriranje: na svaki keyup filtrirati listu korisnika koji sadrže uneseni tekst, prikazivati prva 3 rezultata pomoću slice:0:3.  -->
 
-<input type="text" (keyup)="filtriranje($event)">
-<ul>
-    <li *ngFor="let korisnik of filtriraniKorisnici.slice(0,3)">
-        <span>{{korisnik.name}}</span>
-    </li>
-</ul>
-
-
+<div style="margin-top: 20px;">
+    <input type="text" (keyup)="filtriranje($event)" class="form-control">
+    <ul>
+        <li *ngFor="let korisnik of filtriraniKorisnici.slice(0,3)">
+            <span>{{korisnik.name}}</span>
+        </li>
+    </ul>
+</div>
