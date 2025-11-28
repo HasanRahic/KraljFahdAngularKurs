@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { DecimalPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-zadatak2',
   standalone: true,
-  imports: [FormsModule, NgFor],
+  imports: [FormsModule, NgFor, DecimalPipe],
   templateUrl: './zadatak2.component.html',
   styleUrl: './zadatak2.component.css'
 })
