@@ -1,1 +1,4 @@
-<p>about-us works!</p>
+<div *ngFor="let user of userList" class="card">
+    <p>{{user.id}}</p>
+    <p>{{user.name}}</p>
+</div>
