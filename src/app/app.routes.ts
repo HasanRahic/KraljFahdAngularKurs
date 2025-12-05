@@ -5,15 +5,17 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
-    // {path: 'products', component: ProductListComponent},
+    {path: 'products', component: ProductListComponent},
     // {path: 'login', component: AboutUsComponent},
     // {path: 'product/:id', component: ProductDetailsComponent},
     {path: 'about-us', component: AboutUsComponent},
     {path: 'contact', component: ContactComponent},
+    {path: 'user/:id', component: UserDetailsComponent},
     {path: '**', component: NotFoundComponent},
 ];
 

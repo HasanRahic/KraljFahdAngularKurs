@@ -1,11 +1,11 @@
-import { DatePipe, NgFor } from '@angular/common';
+import { DatePipe, NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DatePipe, FormsModule, NgFor],
+  imports: [DatePipe, FormsModule, NgFor, NgIf, NgClass, NgStyle],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -44,4 +44,26 @@ export class HomeComponent implements OnInit{
       
     }
   }
+
+  nekiNaslov: string = "Neki naslov";
+  promijeniTekst(){
+    this.nekiNaslov = "Sad je drugi tekst";
+  }
+
+  someValue: string = "";
+
+  
+  nizValue: boolean = false;
+  nizNekihImena: any[] =[
+    {id:1, name:"Da li je bitno"},
+    {id:2, name:"Daris"},
+    {id:3, name:"Fortnite"},
+    {id:4, name:"Hasan"},
+    {id:5, name:"Angular"},
+  ]
+  promijeniVrijednostZaListu(){
+    this.nizValue = !this.nizValue;
+  }
+  selectedId: number | null = null;
+
 }

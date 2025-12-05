@@ -3,11 +3,12 @@ import { RouterOutlet, RouterLink, Router, RouterLinkActive } from '@angular/rou
 import { ZadatakComponent } from './components/zadatak/zadatak.component';
 import { Zadatak2Component } from "./components/zadatak2/zadatak2.component";
 import { FormsModule, NgModel } from '@angular/forms';
+import { FooterComponent } from "./components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ZadatakComponent, Zadatak2Component, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, ZadatakComponent, Zadatak2Component, RouterLink, RouterLinkActive, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
