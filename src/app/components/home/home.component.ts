@@ -1,6 +1,7 @@
 import { DatePipe, NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,9 @@ import { FormsModule, NgModel } from '@angular/forms';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
+  username: string = "";
+  firstname: string = "";
+  lastname: string = "";
   today: any = new Date;
   productName: string = "Coca cola";
   selectedType: number=1;
@@ -21,9 +25,15 @@ export class HomeComponent implements OnInit{
     {id:4, name: "Bombone"},
   ];
 
+  constructor(
+    private _productService: ProductService
+  ){}
+
 
   ngOnInit(): void {
-    this.promijenitProductType();
+    this.username = this._productService.username;
+    this.firstname = this._productService.firstname;
+    this.lastname = this._productService.lastname;
   }
 
   changeProductName(){

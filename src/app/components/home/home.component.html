@@ -1,6 +1,10 @@
 <h1>{{nekiNaslov}}</h1>
 
 <h4>Datum: {{today | date:"dd.MM.yyyy"}}</h4>
+<h1>Welcome {{username}}</h1>
+<h4>{{firstname}}</h4>
+<h4>{{lastname}}</h4>
+
 
 <div style="padding: 10px; border: 1px solid red; display: flex; justify-content: center; align-items: center;">
     <label>Naziv proizvoda</label>
@@ -13,16 +17,9 @@
 
 </div>
 <h4>Trenutno odabrani tip proizovda je: {{selectedTypeName}}</h4>
-<button type="button" (click)="promijeniTekst()" class="mt-4 mb-4">Promijeni tekst</button>
+<button type="button" (click)="promijeniTekst()" class="btn btn-primary mt-4 mb-4">Promijeni tekst</button>
 <input type="text" [(ngModel)]="someValue" class="form-control mt-4 mb-4" />
 <p>{{someValue}}</p>
-<!-- <div *ngIf="!nizValue">
-    <div class="mt-4" *ngFor="let niz of nizNekihImena">
-        <p>{{niz.id}}</p>
-        <p>{{niz.name}}</p>
-    </div>
-</div>
-<button type="button" (click)="promijeniVrijednostZaListu()">Dugme</button> -->
 
 <button type="button" class="btn btn-primary" (click)="promijeniVrijednostZaListu()">Dugme</button>
 <div *ngIf="!nizValue">

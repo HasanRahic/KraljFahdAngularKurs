@@ -6,13 +6,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'products', component: ProductListComponent},
-    // {path: 'login', component: AboutUsComponent},
-    // {path: 'product/:id', component: ProductDetailsComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'product/:id', component: ProductDetailsComponent},
     {path: 'about-us', component: AboutUsComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'user/:id', component: UserDetailsComponent},
