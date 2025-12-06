@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { ProductService } from '../../services/product.service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,15 +21,7 @@ export class LoginComponent {
 
   login(){
     this._productService.setUsername(this.username);
-  }
-
-  firstName(){
     this._productService.setFirstName(this.firstname);
-  }
-
-  lastName(){
-    this._productService.setFirstName(this.lastname);
-  }
-
-  
+    this._productService.setLastName(this.lastname);
+  }  
 }

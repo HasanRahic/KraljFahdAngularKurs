@@ -1,6 +1,11 @@
 <div>
-    <input type="text" [(ngModel)]="username">
-    <input type="text" [(ngModel)]="firstname">
-    <input type="text" [(ngModel)]="lastname">
-    <button type="button" class="btn btn-primary" (click)="login()">Logiraj</button>
+    <div class="input">
+        <input type="text" [(ngModel)]="username" class="m-2">
+        <input type="text" [(ngModel)]="firstname"class="m-2">
+        <input type="text" [(ngModel)]="lastname" class="m-2">
+    </div>
+    <div class="m-2">
+        <button type="button" class="btn btn-primary" (click)="login()" routerLink="/home">Logiraj</button>
+
+    </div>
 </div>

@@ -23,11 +23,9 @@ export class ProductService {
   setUsername(username: string){
     this.username = username;
   }
-
   setFirstName(firstname: string){
     this.firstname = firstname;
   }
-
   setLastName(lastname: string){
     this.lastname = lastname;
   }
