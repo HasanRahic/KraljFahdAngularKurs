@@ -1,6 +1,15 @@
-<div class="card">
-    <img [src]="selectedProduct.image" width="200" height="200" alt="">
-    <p>{{selectedProduct.code}} - {{selectedProduct.name}}</p>
+<div class="card" *ngIf="selectedProduct">
+    <img [src]="selectedProduct.images[0]" width="200" height="200" alt="">
+    <p>{{selectedProduct.title}} - {{selectedProduct.id}}</p>
     <p>{{selectedProduct.price}} KM</p>
+    <p>{{selectedProduct.category}}</p>
+    <p>{{selectedProduct.rating}}</p>
     <p>{{selectedProduct.description}}</p>
+</div>
+<h4>Recenzije</h4>
+
+<div *ngIf="selectedProduct">
+    <div *ngFor="let i of selectedProduct.reviews">
+        <p>{{i.rating}} - {{i.comment}}</p>
+    </div>
 </div>

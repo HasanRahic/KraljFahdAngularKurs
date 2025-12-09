@@ -20,8 +20,8 @@ export class LoginComponent {
   ){}
 
   login(){
-    this._productService.setUsername(this.username);
-    this._productService.setFirstName(this.firstname);
-    this._productService.setLastName(this.lastname);
+    this._productService.getUsername(this.username);
+    this._productService.getFirstName(this.firstname);
+    this._productService.getLastName(this.lastname);
   }  
 }

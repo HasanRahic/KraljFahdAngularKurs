@@ -1,9 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  apiUrl: string = "https://dummyjson.com/products";
+  apiCategories: string = "https://dummyjson.com/products/category-list";
+  apiCategory: string ="https://dummyjson.com/products/category/";
+
   products: any[] = [
     { id: 1, code: "3214", name: "Coca Cola", price: 100, quantity: 20, discount: false, description: "Coca Cola je odlicna", image: "https://www.1001spirits.com/tuotekuvat/1200x1200/Coca%20Cola%20Classic%2024x0%2C33%20l.png" },
     { id: 2, code: "3224", name: "Coca Cola Zero", price: 600, quantity: 15, discount: false, description: "Coca Cola je odlicna i jos je zero bas 0 secera ima kako kul", image: "https://shop.stridon.hr/wp-content/uploads/2023/03/Coca-Cola-zero-sugar-330mL.jpg" },
@@ -14,19 +19,34 @@ export class ProductService {
   firstname: string = "";
   lastname: string = "";
 
+  constructor(private http: HttpClient) { }
 
+  getProductsByApi(){
+    return this.http.get(this.apiUrl);
+  }
 
-  getProducts(){
+  getProductById(id: number){
+    return this.http.get(this.apiUrl + "/" + id);
+  }
+
+  getCategories(){
+    return this.http.get(this.apiCategories);
+  }
+  getProductByCategory(cat: string){
+    return this.http.get(this.apiCategory + cat);
+  }
+
+  getProducts() {
     return this.products;
   }
 
-  setUsername(username: string){
+  getUsername(username: string) {
     this.username = username;
   }
-  setFirstName(firstname: string){
+  getFirstName(firstname: string) {
     this.firstname = firstname;
   }
-  setLastName(lastname: string){
+  getLastName(lastname: string) {
     this.lastname = lastname;
   }
 }

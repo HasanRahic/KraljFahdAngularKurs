@@ -38,3 +38,4 @@ export const routes: Routes = [
 // •	Napraviti listu (niz stringova) i prikazati je koristeći *ngFor.
 // •	Napraviti uslovni prikaz (*ngIf) koji se pali/gasi klikom.
 // •	Dodati ngClass i ngStyle za dinamičke stilove.
+    
