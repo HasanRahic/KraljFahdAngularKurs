@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ProductModel } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +49,8 @@ export class ProductService {
   }
   getLastName(lastname: string) {
     this.lastname = lastname;
+  }
+  addProduct(obj:ProductModel){
+    return this.http.post(this.apiUrl + "/add", obj);
   }
 }

@@ -1,0 +1,21 @@
+<h4>Dodavanje novog proizvoda</h4>
+
+<form>
+    <div>
+        <label>Naziv proizvoda: </label>
+        <input type="text" [(ngModel)]="title" name="title">
+    </div>
+    <div>
+        <label>Cijena proizvoda: </label>
+        <input type="text" [(ngModel)]="price" name="price">
+    </div>
+    <div>
+        <label>Deskripcija proizvoda: </label>
+        <textarea [(ngModel)]="description" rows="5" name="description"></textarea>
+    </div>
+    <div>
+        <label>Brand proizvoda: </label>
+        <input type="text" [(ngModel)]="brand" name="brand">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="saveProduct()">Spremi</button>
+</form>

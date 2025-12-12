@@ -7,6 +7,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ContactComponent } from './components/contact/contact.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {path: 'about-us', component: AboutUsComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'user/:id', component: UserDetailsComponent},
+    {path: 'create-product', component: CreateProductComponent},
     {path: '**', component: NotFoundComponent},
 ];
 

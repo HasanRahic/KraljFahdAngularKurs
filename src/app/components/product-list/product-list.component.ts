@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { ProductService } from '../../services/product.service';
 import { FormsModule, NgForm, NgModel } from "@angular/forms";
+import { ProductModel } from '../../models/product';
 
 @Component({
   selector: 'app-product-list',
@@ -12,7 +13,7 @@ import { FormsModule, NgForm, NgModel } from "@angular/forms";
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit{
-  products: any[] = [];
+  products: ProductModel[] = [];
   categories: any[] = [];
   selectedCategory: string= "";
 
