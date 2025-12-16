@@ -1,0 +1,10 @@
+<app-navbar-ispit></app-navbar-ispit>
+<div *ngIf="korisnici" class="row">
+    <div *ngFor="let users of korisnici" class="col-lg-3 col-sm-6 col-xs-12 productBox card m-4 p-2">
+        <p>{{users.firstName}}</p>
+        <p>{{users.lastName}}</p>
+        <p>{{users.email}}</p>
+        <button class="btn btn-primary" [routerLink]="['/korisnik-list', users.id]">Detalji korisnika</button>
+    </div>
+
+</div>

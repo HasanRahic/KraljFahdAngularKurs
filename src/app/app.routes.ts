@@ -8,6 +8,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ListaKorisnikaComponent } from './ispit/lista-korisnika/lista-korisnika.component';
+import { DetaljiKorisnikaComponent } from './ispit/detalji-korisnika/detalji-korisnika.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,6 +21,8 @@ export const routes: Routes = [
     {path: 'contact', component: ContactComponent},
     {path: 'user/:id', component: UserDetailsComponent},
     {path: 'create-product', component: CreateProductComponent},
+    {path: 'korisnik-list', component: ListaKorisnikaComponent},
+    {path: 'korisnik-list/:id', component: DetaljiKorisnikaComponent},
     {path: '**', component: NotFoundComponent},
 ];
 
@@ -41,3 +45,72 @@ export const routes: Routes = [
 // •	Napraviti uslovni prikaz (*ngIf) koji se pali/gasi klikom.
 // •	Dodati ngClass i ngStyle za dinamičke stilove.
     
+
+
+//testni ispit 
+// Priprema za ispit – Angular
+
+// Opis zadatka
+// Potrebno je napraviti Angular aplikaciju za upravljanje korisnicima i njihovom korpom (cart) koristeći DummyJSON API.
+// Aplikacija treba imati dvije glavne stranice:
+// 1.	Lista korisnika
+// 2.	Detalji korisnika + njegova korpa
+// Tehnički zahtjevi
+// U aplikaciji OBAVEZNO koristiti:
+// •	komponente
+// •	servis
+// •	modele (interface)
+// •	rutiranje
+// •	direktive
+// •	GET i POST API pozive
+// •	Bootstrap za osnovni izgled
+// API podaci (DummyJSON)
+// •	Svi korisnici:
+// GET https://dummyjson.com/users
+// •	Detalji korisnika:
+// GET https://dummyjson.com/users/{id}
+// •	Korpa korisnika:
+// GET https://dummyjson.com/carts/user/{id}
+// •	Dodavanje u korpu (simulacija):
+// POST https://dummyjson.com/carts/add
+// Struktura aplikacije
+// 1. Komponente
+// •	UsersComponent – prikaz liste korisnika
+// •	UserDetailsComponent – detalji korisnika + cart
+// •	NavbarComponent – navigacija
+// 2. Servis – UserService
+// Servis treba sadržavati sljedeće metode:
+// •	getUsers() – dohvat svih korisnika
+// •	getUserById(id: number) – dohvat jednog korisnika
+// •	getUserCart(id: number) – dohvat korpe korisnika
+// •	addToCart(data: any) – POST metoda
+// 3. UsersComponent – zahtjevi
+// •	Prikaz liste korisnika (ime, prezime, email)
+// •	Dugme "Detalji" koje vodi na /user/:id
+// •	Input za pretragu po imenu (koristiti ngModel + (input))
+// 4. UserDetailsComponent – zahtjevi
+// •	Dohvat korisnika na osnovu ID-a iz rute
+// •	Prikaz osnovnih informacija o korisniku
+// •	Dohvat i prikaz njegove korpe
+// •	Prikaz proizvoda iz korpe
+// •	Ako korisnik nema korpu, prikazati poruku
+// •	Urediti iznose na proizvodima iz korpe da budu lijepo prikazani sa dvije decimale i sa valutom. 
+// 5. Bootstrap zahtjevi
+// Koristiti barem:
+// •	container
+// •	card
+// •	btn btn-primary
+// •	table ili list-group
+// Dizajn ne mora biti kompleksan, ali mora biti pregledan.
+// 6. Dodavanje u korpu (POST) - BONUS
+// Na stranici detalja dodati formu:
+// •	select za product(lista proizvoda)
+// •	input za quantity
+// •	dugme Dodaj u korpu
+// Koristiti:
+// •	ngModel
+// •	(click) event
+// •	POST metodu servisa
+// 7. Github
+// •	Projekat pushati na github
+// Napomena: Fokus je na funkcionalnosti, pravilnoj strukturi Angular aplikacije i korištenju naučenih koncepata.

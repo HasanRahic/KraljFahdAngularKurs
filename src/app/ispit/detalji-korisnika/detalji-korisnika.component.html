@@ -1,0 +1,14 @@
+
+<div *ngIf="userList" class="card">
+        <p>{{userList.firstName}}</p>
+        <p>{{userList.lastName}}</p>
+        <p>{{userList.email}}</p>
+        <div *ngIf="cart">
+            <div *ngFor="let i of cart">
+                <div *ngFor="let j of i.products">
+                    <p>{{j.title}}</p>
+                    <p>{{j.price}}</p>
+                </div>
+            </div>
+        </div>
+</div>
